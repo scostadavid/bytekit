@@ -54,9 +54,9 @@ function Base64FileConverter() {
       setError('');
     };
 
-    reader.onerror = (err) => {
-      setError('Error reading file: ' + (err as Error).message);
-    };
+    // reader.onerror = (err) => {
+    //   setError('Error reading file: ' + err?.message);
+    // };
 
     if (file) {
       reader.readAsDataURL(file);
