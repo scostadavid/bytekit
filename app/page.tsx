@@ -1,101 +1,180 @@
-import Image from "next/image";
+import { Button } from "@/components/ui/button"
+import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from "@/components/ui/card"
+import {
+  Accordion,
+  AccordionContent,
+  AccordionItem,
+  AccordionTrigger,
+} from "@/components/ui/accordion"
+import Link from "next/link"
+import { Box } from "lucide-react";
+
+function Logo() {
+  return (
+    <div className="flex flex-row gap-2">
+      <div className="flex aspect-square size-8 items-center justify-center rounded-lg bg-sidebar-primary text-sidebar-primary-foreground">
+        <Box className="size-4" />
+      </div>
+      <div className="grid flex-1 text-left text-sm leading-tight">
+        <span className="truncate font-semibold">
+            ByteKit
+        </span>
+        <span className="truncate text-xs">Dev Tools</span>
+      </div>
+    </div>
+  );
+}
+
+
+const NavSection = () => (
+  <header className="w-full fixed top-0 left-0 right-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
+    <div className="max-w-3xl mx-auto flex h-14 items-center">
+      <Link href="/" className="flex items-center space-x-2">
+        <Logo />
+      </Link>
+      <nav className="ml-auto flex items-center space-x-4">
+        <Link href="/app">
+          <Button>Go to App</Button>
+        </Link>
+      </nav>
+    </div>
+  </header>
+)
+
+
+const HeroSection = () => (
+  <section className="w-full max-w-3xl mx-auto text-center my-32">
+    <h1 className="text-4xl font-bold tracking-tighter sm:text-5xl md:text-6xl lg:text-7xl">
+      Tools for the <span className="text-primary">everyday</span> dev
+    </h1>
+    <p className="max-w-[700px] text-lg text-muted-foreground sm:text-xl mx-auto">
+      Develop faster with the tools you use every day.
+    </p>
+    <div className="mt-8 text-center">
+      <Link href="/app">
+        <Button size="lg">Get Started</Button>
+      </Link>
+    </div>
+  </section>
+);
+
+const HowItHelps = () => (
+  <section className="w-full max-w-3xl mx-auto text-center my-32">
+    <h2 className="text-3xl font-bold mb-8">How ByteKit helps you</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
+      <StepCard icon="🔧" title="1. Choose a Tool" description="Select from a variety of developer tools like converters and prettyifiers." />
+      <StepCard icon="⚙️" title="2. Input Your Data" description="Simply paste or enter the data you want to process." />
+      <StepCard icon="🔄" title="3. Process the Data" description="Dont worry, the software will do this for you." />
+      <StepCard icon="📥" title="4. Get Results" description="Instantly copy your data for use." />
+    </div>
+  </section>
+);
+const StepCard = ({ icon, title, description }: { icon: string; title: string; description: string }) => (
+  <Card className="shadow-sm border border-gray-200">
+    <CardContent className="flex flex-col items-center p-6 text-center">
+      <div className="text-4xl mb-4">{icon}</div>
+      <h3 className="font-semibold mb-2">{title}</h3>
+      <p className="text-sm text-muted-foreground">{description}</p>
+    </CardContent>
+  </Card>
+);
+
+const AvailableTools = () => (
+  <section className="w-full max-w-3xl mx-auto my-32">
+    <h2 className="text-3xl font-bold mb-8 text-center">Available Tools</h2>
+    <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
+      <Card className="shadow-sm border border-gray-200 flex flex-col">
+        <CardHeader>
+          <CardTitle className="text-xl font-semibold">JSON Formatter</CardTitle>
+        </CardHeader>
+        <CardContent className="flex-1">
+          <CardDescription className="mb-4">
+            Format your JSON data to make it more readable and organized. Quickly tidy up your JSON for better visualization.
+          </CardDescription>
+        </CardContent>
+        <CardFooter>
+          <a href="/app" className="text-blue-500 hover:underline">
+            Try it now
+          </a>
+        </CardFooter>
+      </Card>
+
+      <Card className="shadow-sm border border-gray-200 flex flex-col">
+        <CardHeader>
+          <CardTitle className="text-xl font-semibold">File to Base64</CardTitle>
+        </CardHeader>
+        <CardContent className="flex-1">
+          <CardDescription className="mb-4">
+            Convert your files into Base64 strings.
+          </CardDescription>
+        </CardContent>
+        <CardFooter>
+          <a href="/app" className="text-blue-500 hover:underline">
+            Try it now
+          </a>
+        </CardFooter>
+      </Card>
+    </div>
+  </section>
+);
+
+
+const FAQ = () => (
+  <section className="w-full max-w-3xl mx-auto text-center my-32">
+    <h2 className="text-3xl font-bold text-center mb-8">Frequently Asked Questions</h2>
+    <Accordion type="single" collapsible className="w-full">
+      <AccordionItem value="item-1">
+        <AccordionTrigger>Is it free to use?</AccordionTrigger>
+        <AccordionContent>
+          Yes, ByteKit is free to use.
+        </AccordionContent>
+      </AccordionItem>
+      <AccordionItem value="item-2">
+        <AccordionTrigger>Is my data secure?</AccordionTrigger>
+        <AccordionContent>
+          We take data security seriously. All data processing is done client-side so the server never knows your inputs.
+        </AccordionContent>
+      </AccordionItem>
+    </Accordion>
+  </section>
+);
+
+
+
+
+const Footer = () => (
+  <footer className="border-t bg-background w-full max-w-3xl mx-auto text-center my-16">
+    <div className="container flex flex-col items-center gap-4 md:h-24 md:flex-row md:py-0">
+      <div className="flex flex-col items-center gap-4 md:flex-row md:gap-2 md:px-0">
+        <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
+          Built by{" "}
+          <a
+            href="https://scostadavid.xyz"
+            target="_blank"
+            rel="noreferrer"
+            className="font-medium underline underline-offset-4"
+          >
+            scostadavid
+          </a>
+          .
+        </p>
+      </div>
+    </div>
+  </footer>
+);
+
 
 export default function Home() {
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <main className="flex flex-col gap-8 row-start-2 items-center sm:items-start">
-        <Image
-          className="dark:invert"
-          src="/next.svg"
-          alt="Next.js logo"
-          width={180}
-          height={38}
-          priority
-        />
-        <ol className="list-inside list-decimal text-sm text-center sm:text-left font-[family-name:var(--font-geist-mono)]">
-          <li className="mb-2">
-            Get started by editing{" "}
-            <code className="bg-black/[.05] dark:bg-white/[.06] px-1 py-0.5 rounded font-semibold">
-              app/page.tsx
-            </code>
-            .
-          </li>
-          <li>Save and see your changes instantly.</li>
-        </ol>
-
-        <div className="flex gap-4 items-center flex-col sm:flex-row">
-          <a
-            className="rounded-full border border-solid border-transparent transition-colors flex items-center justify-center bg-foreground text-background gap-2 hover:bg-[#383838] dark:hover:bg-[#ccc] text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5"
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            <Image
-              className="dark:invert"
-              src="/vercel.svg"
-              alt="Vercel logomark"
-              width={20}
-              height={20}
-            />
-            Deploy now
-          </a>
-          <a
-            className="rounded-full border border-solid border-black/[.08] dark:border-white/[.145] transition-colors flex items-center justify-center hover:bg-[#f2f2f2] dark:hover:bg-[#1a1a1a] hover:border-transparent text-sm sm:text-base h-10 sm:h-12 px-4 sm:px-5 sm:min-w-44"
-            href="https://nextjs.org/docs?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-            target="_blank"
-            rel="noopener noreferrer"
-          >
-            Read our docs
-          </a>
-        </div>
+    <div className="flex min-h-screen flex-col">
+      <NavSection />
+      <main className="flex-1">
+        <HeroSection />
+        <HowItHelps />
+        <AvailableTools />
+        <FAQ />
       </main>
-      <footer className="row-start-3 flex gap-6 flex-wrap items-center justify-center">
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org/learn?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/file.svg"
-            alt="File icon"
-            width={16}
-            height={16}
-          />
-          Learn
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://vercel.com/templates?framework=next.js&utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/window.svg"
-            alt="Window icon"
-            width={16}
-            height={16}
-          />
-          Examples
-        </a>
-        <a
-          className="flex items-center gap-2 hover:underline hover:underline-offset-4"
-          href="https://nextjs.org?utm_source=create-next-app&utm_medium=appdir-template-tw&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <Image
-            aria-hidden
-            src="/globe.svg"
-            alt="Globe icon"
-            width={16}
-            height={16}
-          />
-          Go to nextjs.org →
-        </a>
-      </footer>
+      <Footer />
     </div>
-  );
+  )
 }
