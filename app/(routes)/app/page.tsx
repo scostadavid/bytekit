@@ -1,8 +1,9 @@
+'use server';
+
 import ByteKit from "@/components/byte-kit";
 
-export default function Home() {
+export default async function Home() {
   return (
-    // lista dos serviços
     <ByteKit />
   );
 }
