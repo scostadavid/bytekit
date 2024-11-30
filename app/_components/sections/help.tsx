@@ -1,7 +1,7 @@
 import { Card, CardContent } from "@/components/ui/card";
 
 export const HowItHelps = () => (
-    <section className="w-full max-w-3xl mx-auto text-center my-32 px-4">
+    <section id="how-it-helps" className="w-full max-w-3xl mx-auto text-center my-32 px-4">
       <h2 className="text-3xl font-bold mb-8">How ByteKit helps you</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <StepCard icon="🔧" title="1. Choose a Tool" description="Select from a variety of developer tools like converters and prettyifiers." />

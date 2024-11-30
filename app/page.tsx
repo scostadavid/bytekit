@@ -13,8 +13,8 @@ export default async function Home() {
       <NavSection />
       <main className="flex-1">
         <HeroSection />
-        <HowItHelps />
         <AvailableTools />
+        <HowItHelps />
         <FAQ />
       </main>
       <Footer />
