@@ -67,18 +67,13 @@ function Base64FileConverter() {
 
   return (
     <div className="space-y-4">
-      <div>
-        <h2 className="text-2xl font-bold">Base64 to File Converter</h2>
-        <p className="text-muted-foreground">Convert Base64 string to a File and vice-versa</p>
-      </div>
-
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+      {/* <div className="grid grid-cols-1 md:grid-cols-2 gap-4"> */}
         {/* Base64 to File */}
         <div className="space-y-2">
-          <Label htmlFor="base64-input">Base64 String</Label>
+          <Label htmlFor="base64-input">Base64 String to file</Label>
           <Textarea
             id="base64-input"
-            placeholder="Enter Base64 string"
+            placeholder="Enter a Base64 string"
             value={base64Input}
             onChange={(e) => setBase64Input(e.target.value)}
             className="min-h-[200px] resize-none"
@@ -99,7 +94,7 @@ function Base64FileConverter() {
 
         {/* File to Base64 */}
         <div className="space-y-2">
-          <Label htmlFor="file-input">Select a File</Label>
+          <Label htmlFor="file-input">File to Base64 string</Label>
           <input
             type="file"
             id="file-input"
@@ -122,7 +117,7 @@ function Base64FileConverter() {
             </div>
           )}
         </div>
-      </div>
+      {/* </div> */}
 
       {error && (
         <Alert variant="destructive">

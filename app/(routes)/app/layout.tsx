@@ -11,6 +11,8 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb"
 import { usePathname } from 'next/navigation'
+import React from 'react'
+import { Toaster } from '@/components/ui/toaster'
 
 export default function Layout({
     children,
@@ -32,12 +34,12 @@ export default function Layout({
               {/* breadcrumbs */}
               <Separator orientation="vertical" className="mr-2 h-4" />
           <Breadcrumb>
-            <BreadcrumbList>
+            <BreadcrumbList key={'foo'}>
               {
                 breadcrumbs.map((breadcrumb, index) => {
                   return (
-                    <>
-                      <BreadcrumbItem key={`bc-${index}`} className="hidden md:block">
+                    <React.Fragment key={`bc-${index}`}>
+                      <BreadcrumbItem className="hidden md:block">
                         <BreadcrumbLink href={`/${breadcrumb}`}>
                           {breadcrumb}
                         </BreadcrumbLink>
@@ -45,7 +47,7 @@ export default function Layout({
                       {
                         index !== breadcrumbs.length - 1 ? <BreadcrumbSeparator className="hidden md:block" /> : null
                       }
-                    </>
+                    </React.Fragment>
                   )
                 })
               }
@@ -61,6 +63,7 @@ export default function Layout({
            <main className="flex-1 overflow-y-auto p-6">
              {children}
            </main>
+           <Toaster />
           </div>
         </SidebarInset>
       </SidebarProvider>

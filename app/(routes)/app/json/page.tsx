@@ -5,6 +5,8 @@ import { useState, useEffect, useCallback } from 'react';
 import { Label } from '@/components/ui/label';
 import { Textarea } from '@/components/ui/textarea';
 import { cn } from '@/lib/utils';
+import { Button } from '@/components/ui/button';
+import { useToast } from '@/hooks/use-toast';
 
 
 export default function Json() {
@@ -33,22 +35,42 @@ function JsonFormatter() {
         setError('Invalid JSON: ' + (err as Error).message)
         setOutput('')
       }
-    }, [])
+    }, []);
   
     useEffect(() => {
       const debounce = setTimeout(() => formatJson(input), 300)
       return () => clearTimeout(debounce)
-    }, [input, formatJson])
-  
+    }, [input, formatJson]);
+    
+    const {toast} = useToast();
+    
+    const copyOutput = () => {
+      return toast({
+        title: "Success",
+        description: "Copied to clipboard",
+      })
+      // navigator.clipboard.writeText(output).then(() => {
+      //   console.log('Copied to clipboard:', output);
+      //   return toast({
+      //     title: "Success",
+      //     description: "Copied to clipboard",
+      //   })
+      // }).catch((err) => {
+      //   return toast({
+      //     title: "Failed to copy",
+      //     description: `Check your clipboard api permissions and try again [${err.message}]`,
+      //   })
+      // });
+    }
+
     return (
       <div className="space-y-4">
-        <div>
-          <h2 className="text-2xl font-bold">JSON Formatter & Validator</h2>
-          <p className="text-muted-foreground">Format and validate your JSON data in real-time</p>
-        </div>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div className="space-y-2">
-            <Label htmlFor="json-input">Input JSON</Label>
+            <div className="flex flex-row justify-between">
+              <Label htmlFor="json-input">Input: </Label>
+              <Button variant="outline" onClick={() => setInput('')}>clear</Button>
+            </div>
             <Textarea
               id="json-input"
               placeholder="Paste your JSON here"
@@ -59,7 +81,10 @@ function JsonFormatter() {
             {error && <p className="text-sm text-red-500">{error}</p>}
           </div>
           <div className="space-y-2">
-            <Label htmlFor="json-output">Formatted JSON</Label>
+            <div className="flex flex-row justify-between">
+              <Label htmlFor="json-input">Output: </Label>
+              <Button variant="outline" onClick={copyOutput} disabled={!output}>copy</Button>
+            </div>
             <Textarea
               id="json-output"
               value={output}

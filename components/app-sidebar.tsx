@@ -19,13 +19,13 @@ import { Separator } from "@/components/ui/separator"
 
 export const data = [
     {
-      title: "JSON",
+      title: "JSON Formatter/Validator",
       url: "/app/json",
       description: 'Format your JSON data to make it more readable and organized. Quickly tidy up your JSON for better visualization.',
       icon: FileJson,
     },
     {
-      title: "Base64",
+      title: "File to Base64",
       url: "/app/base64",
       description: 'Convert your files into Base64 strings.',
       icon: File,
