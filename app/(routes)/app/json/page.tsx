@@ -45,22 +45,18 @@ function JsonFormatter() {
     const {toast} = useToast();
     
     const copyOutput = () => {
-      return toast({
-        title: "Success",
-        description: "Copied to clipboard",
-      })
-      // navigator.clipboard.writeText(output).then(() => {
-      //   console.log('Copied to clipboard:', output);
-      //   return toast({
-      //     title: "Success",
-      //     description: "Copied to clipboard",
-      //   })
-      // }).catch((err) => {
-      //   return toast({
-      //     title: "Failed to copy",
-      //     description: `Check your clipboard api permissions and try again [${err.message}]`,
-      //   })
-      // });
+      navigator.clipboard.writeText(output).then(() => {
+        console.log('Copied to clipboard:', output);
+        return toast({
+          title: "Success",
+          description: "Copied to clipboard",
+        })
+      }).catch((err) => {
+        return toast({
+          title: "Failed to copy",
+          description: `Check your clipboard api permissions and try again [${err.message}]`,
+        })
+      });
     }
 
     return (
