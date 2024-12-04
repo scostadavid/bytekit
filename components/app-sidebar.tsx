@@ -12,10 +12,13 @@ import { Logo } from "@/components/logo"
 
 import {
     Sidebar,
+    SidebarContent,
+    SidebarFooter,
     SidebarHeader,
     SidebarRail,
 } from "@/components/ui/sidebar"
 import { Separator } from "@/components/ui/separator"
+import { SidebarCard } from "./sidebar-card"
 
 export const data = [
     {
@@ -38,9 +41,15 @@ export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
       <SidebarHeader>
         <Logo />
         <Separator />
-        <NavMain items={data} />
       </SidebarHeader>
-
+      <SidebarContent>
+        <NavMain items={data} />
+      </SidebarContent>
+      <SidebarFooter>
+        <div className="p-1 align-bottom">
+          <SidebarCard />
+        </div>
+      </SidebarFooter>
       <SidebarRail />
     </Sidebar>
   )

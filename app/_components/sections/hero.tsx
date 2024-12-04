@@ -24,7 +24,7 @@ export const HeroSection = () => (
         <li className="flex items-center">
           <CheckCircle className="text-green-500 w-5 h-5 mr-2" />
           <span>Built for developers, by a{' '}
-            <Link href="https://scostadavid.xyz" rel="noreferrer noopenner" target="_blank">{' '}developer</Link>.
+            <Link href="https://scostadavid.dev" rel="noreferrer noopenner" target="_blank">{' '}developer</Link>.
           </span>
         </li>
       </ul>

@@ -17,7 +17,7 @@ export const metadata: Metadata = {
   title: "ByteKit",
   description: "A set of tools for developers",
   authors: {
-    url: 'scostadavid.xyz',
+    url: 'scostadavid.dev',
     name: 'scostadavid'
   },
 };

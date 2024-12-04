@@ -6,7 +6,7 @@ export const Footer = () => (
           <p className="text-center text-sm leading-loose text-muted-foreground md:text-left">
             &copy; 2024 {" "}
             <a
-              href="https://scostadavid.xyz"
+              href="https://scostadavid.dev"
               target="_blank"
               rel="noreferrer"
               className="font-medium underline underline-offset-4"
