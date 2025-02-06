@@ -3,7 +3,8 @@
 import * as React from "react"
 import {
     File,
-    FileJson
+    FileJson,
+    Calendar
 } from "lucide-react"
 
 import { NavMain } from "@/components/nav-main"
@@ -28,9 +29,15 @@ export const data = [
       icon: FileJson,
     },
     {
+      title: "Date Converter",
+      url: "/app/date",
+      description: 'Convert between different date formats including Unix timestamp, UTC, ISO and more.',
+      icon: Calendar,
+    },
+    {
       title: "File to Base64",
       url: "/app/base64",
-      description: 'Convert your files into Base64 strings.',
+      description: 'Convert your files into Base64 strings and vice versa.',
       icon: File,
     },
   ];
