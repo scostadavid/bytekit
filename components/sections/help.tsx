@@ -2,7 +2,7 @@ import { Card, CardContent } from "@/components/ui/card";
 
 export const HowItHelps = () => (
     <section id="how-it-helps" className="w-full max-w-3xl mx-auto text-center my-32 px-4">
-      <h2 className="text-3xl font-bold mb-8">How ByteKit helps you</h2>
+      <h2 className="text-3xl font-bold mb-8 text-primary">How ByteKit helps you</h2>
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <StepCard icon="🔧" title="1. Choose a Tool" description="Select from a variety of developer tools like converters and prettyifiers." />
         <StepCard icon="⚙️" title="2. Input Your Data" description="Simply paste or enter the data you want to process." />
@@ -12,10 +12,10 @@ export const HowItHelps = () => (
     </section>
   );
   const StepCard = ({ icon, title, description }: { icon: string; title: string; description: string }) => (
-    <Card className="shadow-sm border border-gray-200">
+    <Card className="relative bg-card border-border rounded-xl transform transition-all duration-300 hover:scale-105">
       <CardContent className="flex flex-col items-center p-6 text-center">
         <div className="text-4xl mb-4">{icon}</div>
-        <h3 className="font-semibold mb-2">{title}</h3>
+        <h3 className="font-semibold mb-2 text-primary">{title}</h3>
         <p className="text-sm text-muted-foreground">{description}</p>
       </CardContent>
     </Card>
