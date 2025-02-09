@@ -1,11 +1,11 @@
 'use server';
 
-import { FAQ } from "@/app/_components/sections/faq";
-import { NavSection } from "@/app/_components/sections/nav";
-import { HeroSection } from "@/app/_components/sections/hero";
-import { HowItHelps } from "@/app/_components/sections/help";
-import { AvailableTools } from "@/app/_components/sections/tools";
-import { Footer } from "@/app/_components/sections/footer";
+import { FAQ } from "@/components/sections/faq";
+import { NavSection } from "@/components/sections/nav";
+import { HeroSection } from "@/components/sections/hero";
+import { HowItHelps } from "@/components/sections/help";
+import { AvailableTools } from "@/components/sections/tools";
+import { Footer } from "@/components/sections/footer";
 
 export default async function Home() {
   return (

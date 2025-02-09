@@ -13,7 +13,7 @@ import {
 import { usePathname } from 'next/navigation'
 import React from 'react'
 import { Toaster } from '@/components/ui/toaster'
-
+import { ThemeToggle } from '@/components/theme-toggle'
 export default function Layout({
     children,
   }: Readonly<{
@@ -28,34 +28,30 @@ export default function Layout({
   
         <SidebarInset>
           <header className="flex h-16 shrink-0 items-center gap-2">
-            <div className="flex items-center gap-2 px-4">
-              <SidebarTrigger className="-ml-1" />
-              <Separator orientation="vertical" className="mr-2 h-4" />
-              {/* breadcrumbs */}
-              <Separator orientation="vertical" className="mr-2 h-4" />
-          <Breadcrumb>
-            <BreadcrumbList key={'foo'}>
-              {
-                breadcrumbs.map((breadcrumb, index) => {
-                  return (
-                    <React.Fragment key={`bc-${index}`}>
-                      <BreadcrumbItem className="hidden md:block">
-                        <BreadcrumbLink href={`/${breadcrumb}`}>
-                          {breadcrumb}
-                        </BreadcrumbLink>
-                      </BreadcrumbItem>
-                      {
-                        index !== breadcrumbs.length - 1 ? <BreadcrumbSeparator className="hidden md:block" /> : null
-                      }
-                    </React.Fragment>
-                  )
-                })
-              }
-            </BreadcrumbList>
-          </Breadcrumb>
-              {/*  */}
-
-
+            <div className="flex items-center justify-between w-full px-4">
+              <div className="flex items-center gap-2">
+                <SidebarTrigger className="-ml-1" />
+                <Separator orientation="vertical" className="mr-2 h-4" />
+                <Breadcrumb>
+                  <BreadcrumbList key={'foo'}>
+                    {breadcrumbs.map((breadcrumb, index) => {
+                      return (
+                        <React.Fragment key={`bc-${index}`}>
+                          <BreadcrumbItem className="hidden md:block">
+                            <BreadcrumbLink href={`/${breadcrumb}`}>
+                              {breadcrumb}
+                            </BreadcrumbLink>
+                          </BreadcrumbItem>
+                          {
+                            index !== breadcrumbs.length - 1 ? <BreadcrumbSeparator className="hidden md:block" /> : null
+                          }
+                        </React.Fragment>
+                      )
+                    })}
+                  </BreadcrumbList>
+                </Breadcrumb>
+              </div>
+              <ThemeToggle />
             </div>
           </header>
           <div className="flex flex-1 flex-col gap-4 p-4 pt-0">
