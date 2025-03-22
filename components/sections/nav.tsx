@@ -20,25 +20,14 @@ function Logo() {
   
   
 export const NavSection = () => (
-  <header className="w-full fixed top-0 left-0 right-0 z-50 border-b bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60">
-    <div className="max-w-3xl mx-auto px-4 flex h-14 items-center">
-      <Link href="/" className="flex items-center space-x-2">
-        <Logo />
-      </Link>
-      <nav className="ml-auto flex items-center space-x-4">
-        <Link href="#available-tools" className="hidden sm:block">
-          <Button variant="link">Available Tools</Button>
-        </Link>
-        <Link href="#how-it-helps" className="hidden sm:block">
-          <Button variant="link">How It Helps</Button>
-        </Link>
-        <Link href="#faq" className="hidden sm:block">
-          <Button variant="link">FAQ</Button>
-        </Link>
-        <Link href="/app">
-				  <Button>Go to App</Button>
-				</Link>
-      </nav>
+  <header className="container mx-auto flex items-center justify-between py-4">
+    <div className="flex items-center gap-2">
+      <Logo />
     </div>
+    <Link href="/app" className="rounded-full bg-blue-600 text-white hover:bg-blue-700">
+      <Button>
+        Get Started
+      </Button>
+    </Link>
   </header>
 );
