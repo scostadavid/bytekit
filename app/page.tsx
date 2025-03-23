@@ -52,9 +52,8 @@ export default async function Home() {
       </section>
 
       {/* Main Features Section */}
-      <section className="bg-gray-50 dark:bg-gray-900 py-16 px-2">
+      <section className="py-16 px-2">
         <div className="container mx-auto text-center mb-12">
-          <div className="text-blue-600 dark:text-blue-400 mb-2">Available Tools</div>
           <h2 className="text-3xl md:text-4xl font-bold mb-4 dark:text-white">Take your development to the next level</h2>
           <p className="text-gray-600 dark:text-gray-300 max-w-2xl mx-auto">
             With our simple and powerful tools, you can streamline your workflow and focus on what matters most.
@@ -169,7 +168,7 @@ export default async function Home() {
       </section>
 
       {/* FAQ Section */}
-      <section className="bg-gray-50 dark:bg-gray-900 py-16">
+      <section className="py-16 px-2">
         <div className="container mx-auto">
           <div className="text-center mb-8">
             <h2 className="text-3xl font-bold mb-2 dark:text-white">Frequently Asked Questions</h2>
