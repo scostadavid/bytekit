@@ -111,7 +111,7 @@ export function Base64Converter() {
   }
 
   return (
-    <div className="container mx-auto p-6 max-w-3xl">
+    <div className="container mx-auto">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl font-bold">Base64 Converter</h1>

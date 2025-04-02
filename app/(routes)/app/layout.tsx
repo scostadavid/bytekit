@@ -1,19 +1,20 @@
 'use client'
 
 import { SidebarProvider, SidebarTrigger, SidebarInset } from '@/components/ui/sidebar'
-import { Separator } from '@radix-ui/react-separator'
-import { AppSidebar } from '@/components/app-sidebar'
+import { Separator } from '@radix-ui/react-separator';
+import { AppSidebar } from '@/components/app-sidebar';
 import {
   Breadcrumb,
   BreadcrumbItem,
   BreadcrumbLink,
   BreadcrumbList,
   BreadcrumbSeparator,
-} from "@/components/ui/breadcrumb"
-import { usePathname } from 'next/navigation'
-import React from 'react'
-import { Toaster } from '@/components/ui/toaster'
-import { ThemeToggle } from '@/components/theme-toggle'
+} from "@/components/ui/breadcrumb";
+import { usePathname } from 'next/navigation';
+import React from 'react';
+import { Toaster } from '@/components/ui/toaster';
+import { ThemeToggle } from '@/components/theme-toggle';
+
 export default function Layout({
     children,
   }: Readonly<{

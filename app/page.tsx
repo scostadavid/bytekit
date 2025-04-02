@@ -1,11 +1,11 @@
 'use server';
-import { NavSection } from "@/components/sections/nav";
-import { Button } from "@/components/ui/button";
-import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from "@/components/ui/accordion";
-import { Code, FileText, Calendar, Settings, Wrench, ChevronRight, Box } from "lucide-react";
-import { HeroSection } from "@/components/sections/hero";
-import { Card, CardHeader, CardTitle, CardDescription, CardContent } from "@/components/ui/card";
-import Link from "next/link";
+import { NavSection } from '@/components/sections/nav';
+import { Button } from '@/components/ui/button';
+import { Accordion, AccordionContent, AccordionItem, AccordionTrigger } from '@/components/ui/accordion';
+import { Code, FileText, Calendar, Settings, Wrench, ChevronRight, Box, Database } from 'lucide-react';
+import { HeroSection } from '@/components/sections/hero';
+import { Card, CardHeader, CardTitle, CardDescription, CardContent } from '@/components/ui/card';
+import Link from 'next/link';
 
 export default async function Home() {
   return (
@@ -110,6 +110,26 @@ export default async function Home() {
               <CardTitle className="dark:text-white">Date Converter</CardTitle>
               <CardDescription className="dark:text-gray-300">
                 Convert between different date formats including Unix timestamp, UTC, ISO and more.
+              </CardDescription>
+            </CardHeader>
+            <CardContent>
+              <Link href="/app">
+                <Button variant="outline" className="rounded-full text-blue-600 dark:text-blue-400 border-blue-600 dark:border-blue-400 hover:bg-blue-50 dark:hover:bg-blue-900">
+                  Try it now <ChevronRight size={16} className="ml-1" />
+                </Button>
+              </Link>
+            </CardContent>
+          </Card>
+
+          {/* Card 4: SQL */}
+          <Card>
+            <CardHeader>
+              <div className="h-10 w-10 rounded-lg bg-blue-100 dark:bg-blue-900 flex items-center justify-center mb-4">
+                <Database className="text-blue-600 dark:text-blue-400" size={20} />
+              </div>
+              <CardTitle className="dark:text-white">SQL formatter</CardTitle>
+              <CardDescription className="dark:text-gray-300">
+                Prettify your SQL queries and convert between different dialects, MySQL, Postgres and more.
               </CardDescription>
             </CardHeader>
             <CardContent>

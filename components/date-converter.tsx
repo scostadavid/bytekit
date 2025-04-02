@@ -136,7 +136,7 @@ export function DateConverter() {
   }
 
   return (
-    <div className="container mx-auto p-6 max-w-3xl">
+    <div className="container mx-auto">
       <div className="flex flex-col gap-6">
         <div className="flex flex-col gap-2">
           <h1 className="text-2xl font-bold">Date Converter</h1>

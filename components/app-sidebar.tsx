@@ -1,15 +1,16 @@
 "use client"
 
-import * as React from "react"
+import * as React from "react";
 import {
     File,
     FileJson,
-    Calendar
-} from "lucide-react"
+    Calendar,
+    Database
+} from "lucide-react";
 
-import { NavMain } from "@/components/nav-main"
+import { NavMain } from "@/components/nav-main";
 
-import { Logo } from "@/components/logo"
+import { Logo } from "@/components/logo";
 
 import {
     Sidebar,
@@ -39,6 +40,12 @@ export const data = [
       url: "/app/base64",
       description: 'Convert your files into Base64 strings and vice versa.',
       icon: File,
+    },
+    {
+      title: "SQL Formatter/Validator",
+      url: "/app/sql",
+      description: 'Format your SQL queries and translate between dialects.',
+      icon: Database,
     },
   ];
 
