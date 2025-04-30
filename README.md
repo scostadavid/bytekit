@@ -1,36 +1,76 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# ByteKit 🧰
 
-## Getting Started
+A sleek, fast productivity toolkit for developers, powered by modern web technologies. ByteKit offers a collection of minimalistic, no-login tools to simplify your workflow right from your browser.
 
-First, run the development server:
+## 🌐 Live
+
+Access the toolkit at:  
+🔗 [bytekit.xyz](https://bytekit.xyz)
+
+## 🔧 Tech Stack
+
+- **Language:** Typescript
+- **Framework:** Next.JS, Tailwind
+- **Hosting:** Vercel
+
+## ✨ Features
+
+- Fast, privacy-first tools with no tracking
+- Works offline via service worker (WIP)
+- Instant load, minimal UI
+- Developer-friendly utilities: JSON formatter, timestamp converter, and more
+- Keyboard-first interactions (WIP)
+
+## 🚀 Getting Started
+
+### Prerequisites
+
+- Node.js (v18+ recommended)
+- Yarn (or npm)
+
+### Clone & Run Locally
 
 ```bash
-npm run dev
-# or
+git clone https://github.com/scostadavid/bytekit.git
+cd bytekit
+yarn install
 yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### Build for Production
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+```bash
+yarn build
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Deploy the contents of `dist/` to any static host (e.g., Cloudflare Pages, Netlify, Vercel).
 
-## Learn More
+## 📦 Tools (WIP)
 
-To learn more about Next.js, take a look at the following resources:
+- ✅ Timestamp ↔ Date Converter  
+- ✅ Base64 Encoder/Decoder  
+- ✅ JSON Formatter  
+- ⏳ UUID Generator (coming soon)  
+- ⏳ Regex Tester (coming soon)  
+- ⏳ Text Diff Viewer (coming soon)
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## 📈 Roadmap
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+- [x] Core tools (UUID, timestamps, etc.)
+- [x] Dark mode support
+- [ ] Offline-first experience (PWA)
+- [ ] Searchable command palette
+- [ ] User customization / favorites
 
-## Deploy on Vercel
+## 🧑‍💻 Author
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+- **David S. Costa**  
+  [Email](mailto:me@scostadavid.dev) • [GitHub](https://github.com/scostadavid) • [Website](https://scostadavid.dev) • [LinkedIn](https://linkedin.com/in/scostadavid)
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+---
+
+> ByteKit is designed to stay fast, clean, and clutter-free. Contributions and suggestions are welcome!
+
+---
+
+Quer que eu gere uma versão em português também?
