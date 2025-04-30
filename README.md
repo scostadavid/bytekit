@@ -72,5 +72,3 @@ Deploy the contents of `dist/` to any static host (e.g., Cloudflare Pages, Netli
 > ByteKit is designed to stay fast, clean, and clutter-free. Contributions and suggestions are welcome!
 
 ---
-
-Quer que eu gere uma versão em português também?
