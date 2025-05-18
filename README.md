@@ -2,11 +2,6 @@
 
 A sleek, fast productivity toolkit for developers, powered by modern web technologies. ByteKit offers a collection of minimalistic, no-login tools to simplify your workflow right from your browser.
 
-## 🌐 Live
-
-Access the toolkit at:  
-🔗 [bytekit.xyz](https://bytekit.xyz)
-
 ## 🔧 Tech Stack
 
 - **Language:** Typescript
@@ -45,7 +40,7 @@ yarn build
 
 Deploy the contents of `dist/` to any static host (e.g., Cloudflare Pages, Netlify, Vercel).
 
-## 📦 Tools (WIP)
+### 📦 Tools (WIP)
 
 - ✅ Timestamp ↔ Date Converter  
 - ✅ Base64 Encoder/Decoder  
